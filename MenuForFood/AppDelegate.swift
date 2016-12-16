@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let blueVC = sb.instantiateViewController(withIdentifier: "BlueViewController") as! BlueViewController
+        let greenVC = sb.instantiateViewController(withIdentifier: "GreenViewController") as! GreenViewController
+        let blueWhiteVC = sb.instantiateViewController(withIdentifier: "BlueWhiteViewController") as! BlueWhiteViewController
+        let viewVC = sb.instantiateViewController(withIdentifier: "BlueWhiteViewController") as! ViewController
+        
+        
+        window?.rootViewController = viewVC
+        viewVC.viewControllers = [blueVC, greenVC, blueWhiteVC]
+        
         return true
     }
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,21 +22,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kC-zz-bv5">
-                                <rect key="frame" x="0.0" y="220" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="262" width="375" height="405"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-H1-Pif">
-                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="WGD-8T-XHE"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P4n-wd-pJB" customClass="MenuTableViewCell" customModule="MenuForFood" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="P4n-wd-pJB" customClass="MenuTableViewCell" customModule="MenuForFood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4n-wd-pJB" id="5Ot-8w-TCL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP0-7Q-JGA">
@@ -51,18 +51,34 @@
                                                 <constraint firstItem="sP0-7Q-JGA" firstAttribute="centerY" secondItem="5Ot-8w-TCL" secondAttribute="centerY" id="WGl-1G-Ses"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="sP0-7Q-JGA" id="lqO-zI-zFc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-JI-4RZ">
+                                <rect key="frame" x="20" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.44373146400000002" green="0.79648042929999996" blue="0.41166371210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="R8Z-h3-ScB"/>
+                                </constraints>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gf9-W7-97S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5h1-JI-4RZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3NT-Xh-Fsd"/>
                             <constraint firstItem="QpQ-H1-Pif" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ryc-G4-5eZ"/>
+                            <constraint firstItem="5h1-JI-4RZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="TnE-OE-pbb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9kC-zz-bv5" secondAttribute="bottom" id="UEd-oN-I7G"/>
                             <constraint firstAttribute="trailing" secondItem="QpQ-H1-Pif" secondAttribute="trailing" id="WMY-DN-ZVj"/>
                             <constraint firstItem="9kC-zz-bv5" firstAttribute="top" secondItem="QpQ-H1-Pif" secondAttribute="bottom" id="bMM-cK-eyu"/>
+                            <constraint firstItem="QpQ-H1-Pif" firstAttribute="top" secondItem="5h1-JI-4RZ" secondAttribute="bottom" constant="12" id="qNA-rR-uct"/>
                             <constraint firstItem="9kC-zz-bv5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s55-Ig-uQC"/>
-                            <constraint firstItem="QpQ-H1-Pif" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="v91-pj-7Jr"/>
                             <constraint firstAttribute="trailing" secondItem="9kC-zz-bv5" secondAttribute="trailing" id="vcL-x0-KGt"/>
                         </constraints>
                     </view>
@@ -74,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="139"/>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
         <!--Blue White View Controller-->
         <scene sceneID="rnE-bt-nry">
@@ -153,7 +169,7 @@
         <!--Blue View Controller-->
         <scene sceneID="3xn-MV-vYL">
             <objects>
-                <viewController id="Mfq-uB-nbS" customClass="BlueViewController" customModule="MenuForFood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlueViewController" id="Mfq-uB-nbS" customClass="BlueViewController" customModule="MenuForFood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ADG-YW-MfK"/>
                         <viewControllerLayoutGuide type="bottom" id="fGp-4k-JMd"/>
@@ -198,7 +214,7 @@
         <!--Green View Controller-->
         <scene sceneID="ceL-yj-qOo">
             <objects>
-                <viewController id="an1-Nf-wps" customClass="GreenViewController" customModule="MenuForFood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GreenViewController" id="an1-Nf-wps" customClass="GreenViewController" customModule="MenuForFood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7q7-dc-9mQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Hdg-Da-m9c"/>

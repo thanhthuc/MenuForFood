@@ -10,6 +10,12 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    var name: String? {
+        didSet {
+            nameLabel.text = name
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
