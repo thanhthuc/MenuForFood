@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let blueVC = sb.instantiateViewController(withIdentifier: "BlueViewController") as! BlueViewController
         let greenVC = sb.instantiateViewController(withIdentifier: "GreenViewController") as! GreenViewController
         let blueWhiteVC = sb.instantiateViewController(withIdentifier: "BlueWhiteViewController") as! BlueWhiteViewController
-        let viewVC = sb.instantiateViewController(withIdentifier: "BlueWhiteViewController") as! ViewController
-        
+        let viewVC = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         
         window?.rootViewController = viewVC
         viewVC.viewControllers = [blueVC, greenVC, blueWhiteVC]

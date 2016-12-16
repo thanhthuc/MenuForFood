@@ -71,16 +71,24 @@ class ViewController: UIViewController {
     }
     
     func addChildVCToParentVC() {
-        addChildViewController(activeVC!)
-        activeVC?.view.frame = containerView.bounds
-        containerView.addSubview(activeVC!.view)
-        didMove(toParentViewController: self)
+        if isViewLoaded {
+            if let activeVC = activeVC {
+                addChildViewController(activeVC)
+                activeVC.view.frame = containerView.bounds
+                containerView.addSubview(activeVC.view)
+                didMove(toParentViewController: self)
+            }
+        }
     }
     
     func removeChildVC(inActiveVC: UIViewController?) {
-        willMove(toParentViewController: nil)
-        inActiveVC?.view.removeFromSuperview()
-        inActiveVC?.removeFromParentViewController()
+        if isViewLoaded {
+            if let inActiveVC = inActiveVC {
+                willMove(toParentViewController: nil)
+                inActiveVC.view.removeFromSuperview()
+                inActiveVC.removeFromParentViewController()
+            }
+        }
     }
 }
 
