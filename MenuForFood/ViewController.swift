@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
+    @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     
-    let name = ["Blue","Green","BlueWhite"]
+    let name = ["Blue","Green","Yellow"]
     
     var viewControllerArray: [UIViewController] = []
     var viewControllers: [UIViewController] {
@@ -55,17 +56,17 @@ class ViewController: UIViewController {
     }
     
     func hideMenu() {
-        heightTableView.constant = 200
+        leftConstraint.constant = self.view.bounds.width - 30
         UIView.animate(withDuration: 0.4, animations: {
-            self.heightTableView.constant = 0
+            self.leftConstraint.constant = 0
             self.view.layoutIfNeeded()
         })
     }
     
     func showMenu() {
-        heightTableView.constant = 0
+        leftConstraint.constant = 0
         UIView.animate(withDuration: 0.4, animations: {
-            self.heightTableView.constant = 200
+            self.leftConstraint.constant = self.view.bounds.width - 30
             self.view.layoutIfNeeded()
         })
     }
@@ -97,6 +98,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         hideMenu()
         activeVC = viewControllerArray[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
